@@ -13,7 +13,7 @@ Description: Translating images
 
 import numpy as np
 import argparse
-import imutils
+import imutil
 import cv2
 
 ap = argparse.ArgumentParser()
@@ -34,6 +34,6 @@ cv2.imshow("Shifted Up and Left", shifted)
 
 # using the translate function from the imutils instead of manually
 # defining the Translation Matrix and warping
-shifted = imutils.translate(image, 0, 100)
+shifted = imutil.translate(image, 0, 100)
 cv2.imshow("Shifted Down", shifted)
 cv2.waitKey(0)

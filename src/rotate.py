@@ -13,7 +13,7 @@ Description: rotate.py
 """
 import numpy as np
 import argparse
-import imutils
+import imutil
 import cv2
 
 ap = argparse.ArgumentParser()
@@ -34,6 +34,6 @@ Mat = cv2.getRotationMatrix2D(center, -90, 1.0)
 rotated = cv2.warpAffine(image, Mat, (w, h))
 
 # using the imutils
-rotated = imutils.rotate(image, 180)
+rotated = imutil.rotate(image, 180)
 cv2.imshow("Rotated by 180 deg", rotated)
 cv2.waitKey(0)

@@ -13,7 +13,7 @@ Description: rotate.py
 """
 
 import argparse
-import imutils
+import imutil
 import cv2
 
 ap = argparse.ArgumentParser()
@@ -42,6 +42,6 @@ cv2.imshow("Resized (Height)", resized)
 cv2.waitKey(0)
 
 # using resize function from imutils
-resized = imutils.resize(image, width=100)
+resized = imutil.resize(image, width=100)
 cv2.imshow("Resized via function", resized)
 cv2.waitKey(0)

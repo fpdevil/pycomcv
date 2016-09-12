@@ -4,7 +4,7 @@
 """
 Created on : 30 Aug 2016
 
-Description: imutils.py
+Description: imutil.py
              Helper for the translation functions
 
 @ author   : sampathsingamsetty
@@ -16,18 +16,20 @@ import cv2
 
 
 def translate(image, x, y):
-    '''helper function for translating an image
+    """Helper function for translating an image.
+
     horizontally and vertically based on x, y values
-    '''
+    """
     Mat = np.float32([[1, 0, x], [0, 1, y]])
     shifted = cv2.warpAffine(image, Mat, (image.shape[1], image.shape[0]))
     return shifted
 
 
 def rotate(image, angle, center=None, scale=1.0):
-    '''rotate an image by a certain angle
-    the defaults for rotation are via center and scale 1.0
-    '''
+    """Rotate an image by a certain angle.
+
+    the defaults for rotation are via center and scale of 1.0
+    """
     (h, w) = image.shape[:2]
     if center is None:
         center = (w / 2, h / 2)
@@ -38,9 +40,10 @@ def rotate(image, angle, center=None, scale=1.0):
 
 
 def resize(image, width=None, height=None, interp=cv2.INTER_AREA):
-    '''resize an image based on the aspect ratio by
-    either height or width
-    '''
+    """Resize an image based on the aspect ratio.
+
+    the resize can be done by either height or width of the image
+    """
     dim = None
     (h, w) = image.shape[:2]
 
