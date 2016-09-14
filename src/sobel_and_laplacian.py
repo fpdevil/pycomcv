@@ -5,7 +5,7 @@
 Created on : 03 Sep 2016
 
 Description: sobel_and_laplacian.py
-This involves then gradient and edge detection. Formally edge detection
+This involves the gradient and edge detection. Formally edge detection
 involves mathematical methods for finding the points in an image where
 the brightness of the pixel intensities change distinctly
 

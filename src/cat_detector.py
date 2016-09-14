@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
+
 """
 Created on : 30 Aug 2016
 
@@ -39,7 +40,7 @@ print("Found {0} Cat faces!".format(len(rectangles)))
 # loop over the detected cat faces and draw a rectangle
 # surrounding each cat's face
 for (i, (x, y, w, h)) in enumerate(rectangles):
-    cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 3)
     cv2.putText(image,
                 "Cat #{}".format(i + 1),
                 (x, y - 10),

@@ -22,6 +22,9 @@ args = vars(ap.parse_args())
 
 image = cv2.imread(args["image"])
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# Noise reduction
+# Since edge detection is susceptible to noise in the image,
+# first step is to remove the noise in the image with a 5x5 Gaussian filter
 image = cv2.GaussianBlur(image, (5, 5), 0)
 cv2.imshow("Gaussian Blurred Image", image)
 

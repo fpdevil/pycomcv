@@ -5,14 +5,18 @@ Created on : 30 Aug 2016
 
 Description: image_pyramid.py
              Create image pyramid for a supplied image.
-An  Image pyramid  is a  multi-scale  representation of  an image.  It
+
+An  Image pyramid  is a  multi-scale representation  of an  image.  It
 allows  to  find  objects  in  an image  at  different  scales  of  an
 image. Combined with the sliding window one can find objects in images
 at various locations. At the bottom of the image pyramid, the original
 image will  be there at original  size. At each subsequent  layer, the
 image  is  resized  and  optionally  smoothed  via  Gaussian  blurring
 method. Image  is progressively  subsampled until  a minimum  size has
-been reached and no further subsampling is needed.
+been reached and no further subsampling is needed. These set of images
+with different resolution are called Image Pyramids (because when they
+are kept in a stack with biggest image at bottom and smallest image at
+top look like a pyramid)
 
              Usage:
              python3 image_pyramid.py --image ../images/disney0.jpg

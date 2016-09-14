@@ -30,3 +30,4 @@ eq = cv2.equalizeHist(image)
 
 cv2.imshow("Histogram Equalization", np.hstack([image, eq]))
 cv2.waitKey(0)
+cv2.destroyAllWindows()

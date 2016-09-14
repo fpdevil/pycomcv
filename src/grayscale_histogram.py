@@ -41,5 +41,9 @@ plt.plot(hist)
 plt.xlim([0, 256])
 plt.show()
 
-cv2.waitKey(0)
+while True:
+    x = cv2.waitKey(0) & 0xFF
+    if x == 27:
+        # ESC to exit
+        break
 cv2.destroyAllWindows()
