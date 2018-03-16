@@ -5,9 +5,8 @@ Created on
 Description: Detect faces in a photo
 python3 faces.py --image images/sample.jpg
                  --cascade
-                 /opt/software/opencv/data/haarcascades/haarcascade_frontalface_default.xml
+                 /usr/local/Cellar/opencv3/HEAD-6328076_4/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml
 
-fun: unable to decipher my oracular calligraphy :) , quite an oxymoron
 @ author: sampathsingamsetty
 """
 

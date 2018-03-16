@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-
 """
-Created on : 30 Aug 2016
+Created on  : 28 Dec 2016
 
-Description: Load, Display and Save an image
-             Usage:
-             python3 load_disp_save.py --image ../images/goofy.png
+Description : Load, Display and Save an image
+			  python3 load_display_save.py --image ../images/goofy.png
 
-@ author   : sampathsingamsetty
+@author		: Sampath Singamsetty
 """
 
 from __future__ import print_function

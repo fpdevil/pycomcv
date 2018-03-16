@@ -17,6 +17,7 @@ values will be in the range of 0 to 255
 @ author   : sampathsingamsetty
 """
 
+
 from __future__ import print_function
 from matplotlib import pyplot as plt
 import argparse

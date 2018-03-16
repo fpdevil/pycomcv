@@ -21,8 +21,8 @@ from sklearn.cluster import KMeans
 # input arggument parsing section
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True, help="Path to the image")
-ap.add_argument("-c", "--clusters", required=True,
-                type=int, help="number of clusters")
+ap.add_argument(
+    "-c", "--clusters", required=True, type=int, help="number of clusters")
 args = vars(ap.parse_args())
 
 # represent the image as multi dimensional numpy array. These arrays are in
@@ -39,31 +39,33 @@ plt.imshow(image)
 
 # treating the datapoints as clusters we need to generate k-clusters
 # from n data-points, for which the image needs to be reshaped to a
-# list of pixels rather than the m X n pixels of image.
+# list of pixels rather than the (m X n) pixels of image.
 # numpy function reshape() gives a new shape to an array without
-# changing its data
+# changing its data or color characteristics.
 image = image.reshape((image.shape[0] * image.shape[1], 3))
 
 # using kMeans clustering to find the most dominant colors of image
 # clustering the pixel intensities
 cluster = KMeans(n_clusters=args["clusters"])
+# compute kmeans clustering
 cluster.fit(image)
 
 # helper functions for displaying the clustered colors
-# count the number of pixels beloging to each cluster
+# count the number of pixels belonging to each cluster
 
 
 def centroid_histogram(cluster):
     """Function definition for centroid_histogram.
 
-    This function takes the number of clusters as input
-    and creates a histogram based on the number of pixels
-    assigned to each individual cluster.
+    This function takes the number of  clusters as input and creates a
+    histogram  based  on  the  number   of  pixels  assigned  to  each
+    individual cluster.   Get the locations  of the centroids  and the
+    label of the owning cluster for each observation in the data set
     """
-
     num_of_labels = np.arange(
         0, len(np.lib.arraysetops.unique(cluster.labels_)) + 1)
-    (hist, bin_edges) = np.histogram(cluster.labels_, bins=num_of_labels)
+    # (hist, bin_edges) = np.histogram(cluster.labels_, bins=num_of_labels)
+    (hist, _) = np.histogram(cluster.labels_, bins=num_of_labels)
 
     # normalize the histogram so that the sum can be one
     hist = hist.astype("float")
@@ -77,9 +79,9 @@ def centroid_histogram(cluster):
 def plot_colors(hist, centroids):
     """Function definition for plot_colors.
 
-    initialize the bar chart representing the relative frequency
-    of each of the colors in the image
-    creating a 400 X 75 rectangle to hold colors in image
+    initialize the  bar chart  representing the relative  frequency of
+    each of the colors  in the image creating a 400  X 75 rectangle to
+    hold colors in image
     """
     bar = np.zeros((75, 400, 3), dtype="uint8")
     startx = 0
@@ -99,6 +101,8 @@ def plot_colors(hist, centroids):
 
 # build a histogram of clusters and then create a figure
 # representing the number of pixels labelled to each color
+
+
 hist = centroid_histogram(cluster)
 bar = plot_colors(hist, cluster.cluster_centers_)
 
