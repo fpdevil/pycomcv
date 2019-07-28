@@ -48,6 +48,7 @@ for (i, d) in enumerate(dets):
     shape = predictor(gray, d)
     # convert the landmarks detected into a numpy array
     shape = face_utils.shape_to_np(shape)
+    print(shape)
 
     # convert the dlib's box to OpenCV style bounding box
     (x, y, w, h) = face_utils.rect_to_bb(d)

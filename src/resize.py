@@ -44,4 +44,21 @@ cv2.waitKey(0)
 # using resize function from imutils
 resized = imutil.resize(image, width=100)
 cv2.imshow("Resized via function", resized)
+
+# now construct the list of interpolation methods
+methods = []
+methods.append(('cv2.INTER_NEAREST', cv2.INTER_NEAREST))
+methods.append(('cv2.INTER_LINEAR', cv2.INTER_LINEAR))
+methods.append(('cv2.INTER_AREA', cv2.INTER_AREA))
+methods.append(('cv2.INTER_CUBIC', cv2.INTER_CUBIC))
+methods.append(('cv2.INTER_LANCZOS4', cv2.INTER_LANCZOS4))
+
+# test resizing by doubling the image size
+(h, w) = image.shape[: 2]
+for (name, method) in methods:
+    print('using {} method for resizing'.format(name))
+    resized = imutil.resize(image, width=w * 2, interp=method)
+    cv2.imshow('Method: {}'.format(name), resized)
+    cv2.waitKey(0)
+
 cv2.waitKey(0)

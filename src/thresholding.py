@@ -18,7 +18,6 @@ then image is created.
 """
 
 import argparse
-import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
@@ -30,6 +29,7 @@ args = vars(ap.parse_args())
 image = cv2.imread(args["image"])
 cv2.imshow("Original Image", image)
 cv2.waitKey(0)
+
 
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 _, thrs1 = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)

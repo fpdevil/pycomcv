@@ -10,13 +10,14 @@ Description: kMeans clustering for color segmentation.
 
 @ author   : sampathsingamsetty
 """
-
 import argparse
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
 
 from sklearn.cluster import KMeans
+
+import cv2
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 # input arggument parsing section
 ap = argparse.ArgumentParser()
